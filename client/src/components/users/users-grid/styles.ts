@@ -7,4 +7,5 @@ export const ListComp = styled.div`
 	justify-content: center;
 	max-width: 1300px;
 	margin: 0 auto;
+	margin-bottom: 20px;
 `;
