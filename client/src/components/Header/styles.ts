@@ -9,4 +9,5 @@ export const AppHeader = styled.header`
     justify-content: center;
     font-size: calc(16px);
     color: white;
+    margin-bottom: 20px;
 `;

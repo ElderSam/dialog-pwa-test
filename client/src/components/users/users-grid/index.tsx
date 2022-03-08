@@ -2,6 +2,7 @@ import React from 'react';
 
 import { User } from '../../../common/interfaces/user.interface';
 import UsersGridItem from './grid-item';
+import { ListComp } from './styles';
 
 interface UsersGridProps { 
     users: User[]
@@ -9,13 +10,13 @@ interface UsersGridProps {
 
 const UsersGrid: React.FC<UsersGridProps> = ({ users }: UsersGridProps) => {
     return (
-        <div className="users-grid">
+        <ListComp>
             {users.map(user => (
                 <div key={`${user._id}}`}>
                     <UsersGridItem user={user} />
                 </div>
             ))}
-        </div>
+        </ListComp>
     );
 }
 

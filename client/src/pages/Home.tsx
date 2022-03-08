@@ -8,7 +8,6 @@ function Home() {
 
     return (
         <div>
-            <div>Home</div>
             <UsersGrid users={users || []} />
         </div>
     )

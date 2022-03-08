@@ -1,25 +1,25 @@
 interface Friends {
-    _id: String
+    _id: string
     index: number
-    picture: String
+    picture: string
     age: number
-    eyeColor: String
-    name: String
-    company: String
-    email: String
-    phone: String
+    eyeColor: string
+    name: string
+    company: string
+    email: string
+    phone: string
 }
 
 export interface User {
-    _id: String
+    _id: string
     index: number
-    picture: String
+    picture: string
     age: number
-    eyeColor: String
-    name: String
-    company: String
-    email: String
-    phone: String
+    eyeColor: string
+    name: string
+    company: string
+    email: string
+    phone: string
     friends: [Friends]
-    greeting: String
+    greeting: string
 }
