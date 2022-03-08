@@ -13,9 +13,10 @@ export const GridUserItem = styled.div`
 
 	@media only screen and (max-width: 600px) {
 		img {
-			min-width: 70vw;
+			width: 70vw;
+			max-width: 300px;
 		}
-    }
+	}
 `;
 
 export const CardBody = styled.div`

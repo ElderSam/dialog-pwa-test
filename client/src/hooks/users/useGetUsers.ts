@@ -15,6 +15,20 @@ const GET_USERS = gql`
 	}
 `;
 
+// const GET_USERS = gql`
+//     query GetUsers($options: PageQueryOptions!) {
+//         list(options: $options) {
+//                 _id
+//                 name
+//                 age
+//                 eyeColor
+//                 company
+//                 email
+//                 picture
+//         }
+//     }
+// `
+
 export const useGetUsers = (): User[] | undefined => {
 	const { data } = useQuery(GET_USERS, {
 		// variables: { options: { paginate: { page: 1, limit: 10 } } },
