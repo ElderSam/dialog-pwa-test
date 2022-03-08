@@ -25,7 +25,7 @@ function AppContainer() {
 
   return (
     <div className="App">
-      <Header search={search} setSearch={setSearch} />
+      <Header setSearch={setSearch} />
       {!queryLoading && <Home users={dataClients?.list || []} />}
     </div>
   )
