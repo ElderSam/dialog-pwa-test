@@ -32,6 +32,9 @@
 
 Deverá executar com `yarn start` na porta 3000
 
+### Anotações
+[Get started with Apollo Client](https://www.apollographql.com/docs/react/get-started/)
+
 --------------------------------------------------------
 
 
