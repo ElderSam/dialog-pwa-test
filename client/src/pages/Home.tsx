@@ -1,10 +1,8 @@
 import React from 'react'
 import UsersGrid from '../components/users/users-grid';
 
-import { useGetUsers } from '../hooks/users/useGetUsers';
-
-function Home() {
-    const users = useGetUsers();
+function Home({ users }: any) {
+//   const users = useGetUsers();
 
     return (
         <div>

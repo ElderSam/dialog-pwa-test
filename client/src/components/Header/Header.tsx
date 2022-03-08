@@ -1,15 +1,27 @@
 import React, { useState } from "react";
+
 import { AppHeader } from './styles'
 import { ReactComponent as SearchLogo } from '../../components/icons/search.svg';
 
-function Header() {
-	const [search, setSearch] = useState();
+interface searchType {
+	search: string
+	setSearch: (v: string) => void
+}
+const Header = ({ search, setSearch }: searchType) => {
+	const [searchText, setSearchText] = useState("");
 
 	const handleChange = (e: any): void => {
 		if(e?.target?.value) {
-			setSearch(e?.target?.value)
+			setSearchText(e?.target?.value)
+		} else {
+			setSearchText("")
+			setSearch("")
 		}
 	};
+
+	function getData() {
+		setSearch(searchText)
+	}
 
 	return (
 		<AppHeader>
@@ -17,11 +29,10 @@ function Header() {
 
 			<div>
 				<input type="text" onChange={handleChange} placeholder="search" />
-				<button onClick={() => console.log('search', search)}>
+				<button type="submit" onClick={() => getData()}>
 					<SearchLogo height="25" />
 				</button>
 			</div>
-
 		</AppHeader>
 	);
 }
