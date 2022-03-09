@@ -1,5 +1,6 @@
 import { createServer } from "http";
 import express from "express";
+import cors from "cors";
 import { ApolloServer } from "apollo-server-express";
 
 import { typeDefs, resolvers } from "./graphql/index";
@@ -7,6 +8,7 @@ import { myPlugin } from "./apollo/myLogPlugin";
 
 const PORT = 4000;
 const app = express();
+app.use(cors())
 const httpServer = createServer(app);
 
 const apolloServer = new ApolloServer({
