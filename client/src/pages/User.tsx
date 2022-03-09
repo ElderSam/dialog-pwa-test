@@ -38,7 +38,6 @@ function UserPage() {
                 <p>MySocial</p>
             </AppHeader>
             <div>
-                <div>User page</div>
                 <UserCard>
                     <img src={user.picture} alt="user" />
                     <UserCardBody>

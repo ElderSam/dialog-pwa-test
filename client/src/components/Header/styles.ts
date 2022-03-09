@@ -10,7 +10,6 @@ export const AppHeader = styled.header`
 	min-height: 5vh;
 	font-size: calc(16px);
 	color: white;
-	margin-bottom: 20px;
 
 	> p {
 		margin-left: 50px;
