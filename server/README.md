@@ -83,3 +83,6 @@ https://www.apollographql.com/docs/apollo-server/monitoring/metrics/
 utils: 
   https://www.npmjs.com/package/apollo-log
   https://docs.datadoghq.com/integrations/apollo/
+
+
+### [Creating production builds](https://khalilstemmler.com/blogs/typescript/node-starter-project/#Creating-production-builds)
