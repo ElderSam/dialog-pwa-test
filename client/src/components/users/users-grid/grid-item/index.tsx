@@ -7,14 +7,15 @@ import { GridUserItem, CardHeader, CardBody } from './styles';
 const UsersGridItem: React.FC<{ user: User }> = ({ user }: { user: User }) => {
     const navigate = useNavigate()
     const location = useLocation();
+    const page = location.pathname.split('/')[1]
 
     const goToUser = () => {
-        if (!(location.pathname.split('/')[1] === 'user'))
+        if (!(page === 'user'))
             navigate(`/user/${user._id}`)
     }
 
     return (
-        <GridUserItem onClick={goToUser}>
+        <GridUserItem onClick={goToUser} page={page}>
             <CardHeader>
                 <img src={user.picture} alt="user" />
             </CardHeader>

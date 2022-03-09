@@ -5,6 +5,8 @@ export const GridUserItem = styled.div`
 	border-radius: 15px;
 	padding: 15px;
 	transition: 0.5s;
+	cursor: ${({ page }: { page: string }) =>
+		page !== "user" ? "pointer" : "unset"};
 
 	&:hover {
 		background-color: #debdff;
