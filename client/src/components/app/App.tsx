@@ -1,11 +1,14 @@
-import React, { useState } from 'react';
-import { ApolloProvider, useQuery } from '@apollo/client';
+import React from 'react';
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+} from "react-router-dom";
+import { ApolloProvider } from '@apollo/client';
 
 import client from '../../common/apollo-client';
-import Header from '../Header/Header';
 import Home from '../../pages/Home';
 import './App.css';
-import { GET_USERS_BY_NAME } from '../../hooks/users/useGetUsers';
 
 function App() {
   return (
@@ -15,18 +18,18 @@ function App() {
   );
 }
 
-function AppContainer() {
-  const [search, setSearch] = useState<string>("");
-  const { data: dataClients, loading: queryLoading } = useQuery(GET_USERS_BY_NAME, {
-    variables: {
-      name: search,
-    }
-  })
+const AppContainer: React.FC = () => {
 
   return (
     <div className="App">
-      <Header setSearch={setSearch} />
-      {queryLoading ? <div>carregando ...</div> : <Home users={dataClients?.list || []} />}
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />}>
+          </Route>
+          <Route path="/user" element={<div>user</div>}>
+          </Route>
+        </Routes>
+      </BrowserRouter>
     </div>
   )
 }
