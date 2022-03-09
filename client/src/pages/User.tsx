@@ -6,8 +6,8 @@ import { User } from '../common/interfaces/user.interface';
 import { AppHeader } from '../components/Header/styles'
 import UsersGrid from '../components/users/users-grid';
 import { GET_USER_BY_ID } from '../hooks/users/useGetUsers';
-import { StyledLink } from './styles';
-
+import { StyledLink, UserCard, UserCardBody, Title2 } from './styles';
+import { ReactComponent as GoBackIcon } from '../components/icons/circle-chevron-left-solid.svg'
 function UserPage() {
     const location = useLocation();
     const [id, setId] = useState('')
@@ -25,7 +25,7 @@ function UserPage() {
     }, [location, location.pathname])
 
     useEffect(() => {
-        if(!queryLoading && dataUser) {
+        if (!queryLoading && dataUser) {
             setUser(dataUser.getUserById)
         }
     }, [queryLoading, dataUser])
@@ -33,18 +33,24 @@ function UserPage() {
     return (
         <div>
             <AppHeader>
-                <StyledLink to='/'>Voltar</StyledLink>
+                <StyledLink to='/'>
+                    <GoBackIcon />
+                </StyledLink>
 
                 <p>MySocial</p>
             </AppHeader>
-            <div>User page</div>
-            <div style={{ background: 'lightblue' }}>
-                <div>name: {user.name}</div>
-                <div>age: {user.age}</div>
-                <div>email: {user.email}</div>
+            <div>
+                <UserCard>
+                    <img src={user.picture} alt="user" />
+                    <UserCardBody>
+                        <div><strong>name:</strong> {user.name}</div>
+                        <div><strong>age:</strong> {user.age}</div>
+                        <div><strong>email:</strong> {user.email}</div>
+                    </UserCardBody>
+                </UserCard>
+                <Title2>Friends ({user?.friends?.length | 0}):</Title2>
+                <UsersGrid users={user?.friends || []} />
             </div>
-            <div>Friends:</div>
-            <UsersGrid users={user?.friends || []} />
         </div>
     )
 }
