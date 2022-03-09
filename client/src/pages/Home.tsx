@@ -6,6 +6,7 @@ function Home({ users }: any) {
 
     return (
         <div>
+            <p>total: {users.length}</p>
             <UsersGrid users={users || []} />
         </div>
     )
