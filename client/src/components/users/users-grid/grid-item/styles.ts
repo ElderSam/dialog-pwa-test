@@ -19,6 +19,13 @@ export const GridUserItem = styled.div`
 	}
 `;
 
+// Image div
+export const CardHeader = styled.div`
+	height: 200px;
+	width: 200px;
+	background: lightgrey;
+`;
+
 export const CardBody = styled.div`
 	display: flex;
 	flex-direction: column;

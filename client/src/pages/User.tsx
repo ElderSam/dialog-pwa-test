@@ -6,7 +6,7 @@ import { User } from '../common/interfaces/user.interface';
 import { AppHeader } from '../components/Header/styles'
 import UsersGrid from '../components/users/users-grid';
 import { GET_USER_BY_ID } from '../hooks/users/useGetUsers';
-import { StyledLink } from './styles';
+import { StyledLink, UserCard, UserCardBody, Title2 } from './styles';
 
 function UserPage() {
     const location = useLocation();
@@ -25,7 +25,7 @@ function UserPage() {
     }, [location, location.pathname])
 
     useEffect(() => {
-        if(!queryLoading && dataUser) {
+        if (!queryLoading && dataUser) {
             setUser(dataUser.getUserById)
         }
     }, [queryLoading, dataUser])
@@ -37,14 +37,19 @@ function UserPage() {
 
                 <p>MySocial</p>
             </AppHeader>
-            <div>User page</div>
-            <div style={{ background: 'lightblue' }}>
-                <div>name: {user.name}</div>
-                <div>age: {user.age}</div>
-                <div>email: {user.email}</div>
+            <div>
+                <div>User page</div>
+                <UserCard>
+                    <img src={user.picture} alt="user" />
+                    <UserCardBody>
+                        <div>name: {user.name}</div>
+                        <div>age: {user.age}</div>
+                        <div>email: {user.email}</div>
+                    </UserCardBody>
+                </UserCard>
+                <Title2>Friends:</Title2>
+                <UsersGrid users={user?.friends || []} />
             </div>
-            <div>Friends:</div>
-            <UsersGrid users={user?.friends || []} />
         </div>
     )
 }
