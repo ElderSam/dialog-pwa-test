@@ -38,14 +38,24 @@ function list(search: string): any {
 	}
 }
 
+const getUserById = (id: string) => {
+	const data = getListData();
+	return data.find(item => item._id === id)
+}
+
 interface listSearchInput {
 	name: string;
+}
+
+interface userSearchInput {
+	userId: string;
 }
 
 export const resolvers = {
 	Query: {
 		rootQuery: () => rootQuery,
 		list: (_: any, { name }: listSearchInput) => list(name),
+		getUserById: (_: any, { userId }: userSearchInput) => getUserById(userId),
 	},
 	// Mutations: {...}
 };
