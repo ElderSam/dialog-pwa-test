@@ -36,5 +36,6 @@ export const typeDefs = gql`
 	type Query {
 		rootQuery: RootQuery
 		list(name: String): [User]!
+		getUserById(userId: ID!): User
 	}
 `;
