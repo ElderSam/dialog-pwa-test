@@ -12,20 +12,25 @@ export const GridUserItem = styled.div`
 		background-color: #debdff;
 		border-radius: 7px;
 	}
-
-	@media only screen and (max-width: 600px) {
-		img {
-			width: 70vw;
-			max-width: 300px;
-		}
-	}
 `;
 
 // Image div
 export const CardHeader = styled.div`
 	height: 200px;
 	width: 200px;
-	background: lightgrey;
+	background: #8f8f8f;
+
+	@media only screen and (max-width: 600px) {
+		width: 70vw;
+		height: 70vw;
+		max-width: 300px;
+		max-height: 300px;
+
+		img {
+			width: 70vw;
+			max-width: 300px;
+		}
+	}
 `;
 
 export const CardBody = styled.div`
