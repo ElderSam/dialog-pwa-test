@@ -48,7 +48,7 @@ function UserPage() {
                         <div><strong>email:</strong> {user.email}</div>
                     </UserCardBody>
                 </UserCard>
-                <Title2>Friends:</Title2>
+                <Title2>Friends ({user?.friends?.length | 0}):</Title2>
                 <UsersGrid users={user?.friends || []} />
             </div>
         </div>
