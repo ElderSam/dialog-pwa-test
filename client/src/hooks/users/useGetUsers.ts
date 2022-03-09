@@ -15,26 +15,37 @@ import { gql } from "@apollo/client";
 // `;
 
 export const GET_USERS_BY_NAME = gql`
-    query GetUsers($name: String!) {
-        list(name: $name) {
-                _id
-                name
-                age
-                eyeColor
-                company
-                email
-                picture
-        }
-    }
-`
+	query GetUsers($name: String!) {
+		list(name: $name) {
+			_id
+			name
+			age
+			eyeColor
+			company
+			email
+			picture
+		}
+	}
+`;
 
-// export const useGetUsers = (): User[] | undefined => {
-// 	let options = {
-// 		// variables: { options: { paginate: { page: 1, limit: 10 } } },
-// 	}
+export const GET_USER_BY_ID = gql`
+	query GetUserById($userId: ID!) {
+		getUserById(userId: $userId) {
+			_id
+			name
+			age
+			email
+			picture
 
-// 	const query = GET_USERS
-// 	const { data } = useQuery(query, options);
-	
-// 	return data?.list;
-// };
+			friends {
+				_id
+				name
+				age
+				eyeColor
+				company
+				email
+				picture
+			}
+		}
+	}
+`;

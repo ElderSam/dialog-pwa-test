@@ -9,6 +9,7 @@ import { ApolloProvider } from '@apollo/client';
 import client from '../../common/apollo-client';
 import Home from '../../pages/Home';
 import './App.css';
+import User from '../../pages/User';
 
 function App() {
   return (
@@ -26,7 +27,7 @@ const AppContainer: React.FC = () => {
         <Routes>
           <Route path="/" element={<Home />}>
           </Route>
-          <Route path="/user" element={<div>user</div>}>
+          <Route path="/user/:id" element={<User />}>
           </Route>
         </Routes>
       </BrowserRouter>

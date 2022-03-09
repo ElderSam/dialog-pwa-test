@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { ApolloProvider, useQuery } from '@apollo/client';
+import { useQuery } from '@apollo/client';
 
 import UsersGrid from '../components/users/users-grid';
 import { GET_USERS_BY_NAME } from '../hooks/users/useGetUsers';
