@@ -26,7 +26,7 @@ function AppContainer() {
   return (
     <div className="App">
       <Header setSearch={setSearch} />
-      {!queryLoading && <Home users={dataClients?.list || []} />}
+      {queryLoading ? <div>carregando ...</div> : <Home users={dataClients?.list || []} />}
     </div>
   )
 }
