@@ -4,21 +4,33 @@ import { Link } from "react-router-dom";
 export const StyledLink = styled(Link)`
 	margin-left: 50px;
 	color: lightblue;
+
+	svg {
+		height: 24px;
+		fill: #6464b5;
+		margin-top: 7px;
+		transition: 0.5s;
+
+		&:hover {
+			height: 27px;
+			fill: #fff;
+		}
+	}
 `;
 
 export const UserCard = styled.div`
 	background: lightblue;
-    padding: 10px 0 10px 50px;
+	padding: 10px 0 10px 50px;
 
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: start;
 	align-items: start;
 
-    img {
-        border-radius: 75px;
-        height: 150px;
-    }
+	img {
+		border-radius: 75px;
+		height: 150px;
+	}
 
 	@media only screen and (min-width: 500px) {
 		gap: 20px;

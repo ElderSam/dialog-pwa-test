@@ -7,7 +7,7 @@ import { AppHeader } from '../components/Header/styles'
 import UsersGrid from '../components/users/users-grid';
 import { GET_USER_BY_ID } from '../hooks/users/useGetUsers';
 import { StyledLink, UserCard, UserCardBody, Title2 } from './styles';
-
+import { ReactComponent as GoBackIcon } from '../components/icons/circle-chevron-left-solid.svg'
 function UserPage() {
     const location = useLocation();
     const [id, setId] = useState('')
@@ -33,7 +33,9 @@ function UserPage() {
     return (
         <div>
             <AppHeader>
-                <StyledLink to='/'>Voltar</StyledLink>
+                <StyledLink to='/'>
+                    <GoBackIcon />
+                </StyledLink>
 
                 <p>MySocial</p>
             </AppHeader>
