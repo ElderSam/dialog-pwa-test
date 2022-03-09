@@ -43,9 +43,9 @@ function UserPage() {
                 <UserCard>
                     <img src={user.picture} alt="user" />
                     <UserCardBody>
-                        <div>name: {user.name}</div>
-                        <div>age: {user.age}</div>
-                        <div>email: {user.email}</div>
+                        <div><strong>name:</strong> {user.name}</div>
+                        <div><strong>age:</strong> {user.age}</div>
+                        <div><strong>email:</strong> {user.email}</div>
                     </UserCardBody>
                 </UserCard>
                 <Title2>Friends:</Title2>
